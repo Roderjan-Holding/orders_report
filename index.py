@@ -1,1 +1,1 @@
-print("Test")
+from app.config import DatabaseManager
