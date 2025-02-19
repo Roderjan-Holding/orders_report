@@ -1,1 +1,1 @@
-console.log("teste")
+from app.config import DatabaseManager
