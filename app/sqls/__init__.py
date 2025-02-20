@@ -1,1 +1,1 @@
-from .queries import get_orders
+import sql_queries as queries
