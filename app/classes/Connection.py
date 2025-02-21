@@ -1,5 +1,5 @@
-import sys
 import mysql.connector as mariadb
+import sys
 
 class DatabaseConnection:
     def __init__(
