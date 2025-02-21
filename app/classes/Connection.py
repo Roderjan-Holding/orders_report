@@ -15,6 +15,7 @@ class DatabaseConnection:
         self.user = user
         self.password = password
         self.port = port
+        self.connection = self.__connect()
     
     def __connect(self) -> mariadb.connection.MySQLConnection:
         try:
@@ -25,7 +26,20 @@ class DatabaseConnection:
                 password=self.password,
                 port=self.port
             )
-            return conn.cursor()
+            return conn
         except mariadb.Error as e:
             print(f"Error connecting to MariaDB Database: {e}")
             sys.exit(1)
+
+    def execute(self, query: str):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(query)
+            return cursor
+        except mariadb.Error as e:
+            print(f"Error executing query: {e}")
+            return None
+
+    def close(self):
+        if self.connection.is_connected():
+            self.connection.close()
