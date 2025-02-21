@@ -1,6 +1,6 @@
 from app.config.config import DatabaseManager
 
-class Extract_data():
+class ExtractData():
     def __init__(
         self,
         queries

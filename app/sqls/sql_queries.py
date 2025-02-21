@@ -1,4 +1,4 @@
-QUERIE = """
+GET_ALL_FINISHED_ORDERS = """
 SELECT 
 	id, name, status, content 
 FROM glpi_tickets 

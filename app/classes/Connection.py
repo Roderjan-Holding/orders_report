@@ -1,4 +1,4 @@
-from typing import Type
+import sys
 import mysql.connector as mariadb
 
 class DatabaseConnection:
@@ -17,11 +17,15 @@ class DatabaseConnection:
         self.port = port
     
     def __connect(self) -> mariadb.connection.MySQLConnection:
-        conn = mariadb.connect(
-            host=self.host,
-            database=self.database,
-            user=self.user,
-            password=self.password,
-            port=self.port
-        )
-        return conn
+        try:
+            conn = mariadb.connect(
+                host=self.host,
+                database=self.database,
+                user=self.user,
+                password=self.password,
+                port=self.port
+            )
+            return conn.cursor()
+        except mariadb.Error as e:
+            print(f"Error connecting to MariaDB Database: {e}")
+            sys.exit(1)

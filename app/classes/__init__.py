@@ -1,2 +1,2 @@
 from .Connection import DatabaseConnection
-from .Extract_data import Extract_data
+from .Extract_data import ExtractData
