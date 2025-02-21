@@ -1,8 +1,8 @@
-from app.classes.Extract_data import ExtractData
+from app.classes.DatabaseHTMLExtractor import DatabaseHTMLExtractor
 from app.classes.Connection import DatabaseConnection
 from app.sqls import sql_queries as queries
 
-app = ExtractData(
+app = DatabaseHTMLExtractor(
     queries=queries,
     databaseConnection=DatabaseConnection
 )

@@ -2,7 +2,7 @@ from app.config.config import DatabaseManager
 from  bs4 import BeautifulSoup
 import html
 
-class ExtractData():
+class DatabaseHTMLExtractor():
     def __init__(
         self,
         queries,
@@ -19,3 +19,6 @@ class ExtractData():
         decoded_html = html.unescape(html_string)
         soup = BeautifulSoup(decoded_html, "html_parser")
         return soup
+    
+    def get_html(self) -> str:
+        return self.__decode_html()
