@@ -15,4 +15,7 @@ class ExtractData():
         pass
 
     def __decode_html(self) -> str:
-        pass
+        html_string = self.__get_html()
+        decoded_html = html.unescape(html_string)
+        soup = BeautifulSoup(decoded_html, "html_parser")
+        return soup
