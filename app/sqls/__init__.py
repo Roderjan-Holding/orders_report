@@ -1,1 +1,1 @@
-import sql_queries as queries
+from .sql_queries import GET_ALL_FINISHED_ORDERS
