@@ -1,14 +1,14 @@
 from typing import Type
-import psycopg2 as pg2
+import mysql.connector as mariadb
 
-class Database_connection:
+class DatabaseConnection:
     def __init__(
         self,
         host: str,
         database: str,
         user: str,
         password: str,
-        port: str
+        port: int
     ) -> None:
         self.host = host
         self.database = database
@@ -16,11 +16,12 @@ class Database_connection:
         self.password = password
         self.port = port
     
-    def __connect(self) -> type[pg2.connect]:
-        conn = pg2.connect(
+    def __connect(self) -> mariadb.connection.MySQLConnection:
+        conn = mariadb.connect(
             host=self.host,
             database=self.database,
             user=self.user,
-            password=self.password
+            password=self.password,
+            port=self.port
         )
         return conn
