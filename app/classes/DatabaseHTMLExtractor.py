@@ -40,7 +40,7 @@ class DatabaseHTMLExtractor():
         for string in html_strings:
             decoded_string = html.unescape(string)
             soup = BeautifulSoup(decoded_string, "html.parser")
-            decoded_html_list.append(soup.prettify())
+            decoded_html_list.append(soup)
         return decoded_html_list
     
     def get_html(self) -> str:
