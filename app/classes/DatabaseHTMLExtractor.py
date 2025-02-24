@@ -24,7 +24,7 @@ class DatabaseHTMLExtractor():
         data = self.__extract_database_info()
 
         extracted_html_data = [
-            row[3] for row in data if row[3] and isinstance(row[3], str)
+            row[0] for row in data if row[0] and isinstance(row[0], str)
         ]
 
         if extracted_html_data:
