@@ -11,6 +11,5 @@ decoded_html = DatabaseHTMLExtractor(
 
 decoded_html_list = decoded_html.get_html()
 
-# Print each HTML result
 for idx, html_content in enumerate(decoded_html_list, start=1):
     print(f"HTML Content #{idx}:\n{html_content}\n{'-'*50}")
