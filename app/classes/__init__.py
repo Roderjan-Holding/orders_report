@@ -1,1 +1,2 @@
-from .Connection import Database_connection
+from .Connection import DatabaseConnection
+from .DatabaseHTMLExtractor import DatabaseHTMLExtractor

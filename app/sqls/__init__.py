@@ -1,1 +1,1 @@
-from .queries import get_orders
+from .sql_queries import GET_ALL_FINISHED_ORDERS
