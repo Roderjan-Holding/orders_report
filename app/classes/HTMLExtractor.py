@@ -50,6 +50,8 @@ class HTMLExtractor(DatabaseHTMLExtractor):
             
         return columns
 
+    def __sum_currency_values(self):
+        pass
 
     def get_company_billing(self) -> str:
         return self.__extract_company_billing()

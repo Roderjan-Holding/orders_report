@@ -8,4 +8,3 @@ decoded_html = HTMLExtractor(
     queries=sql_queries,
     databaseConnection=db_connection
 )
-
