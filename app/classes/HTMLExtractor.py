@@ -51,7 +51,7 @@ class HTMLExtractor(DatabaseHTMLExtractor):
 
         return columns
 
-    def sum_currency_values(self):
+    def __sum_budgeted_values(self):
         table_sums = []
         html_data_list = self.get_html()
 
@@ -78,3 +78,6 @@ class HTMLExtractor(DatabaseHTMLExtractor):
 
     def get_table(self) -> dict:
         return self.__extract_table_by_columns()
+    
+    def get_budgeted_values(self) -> list:
+        return self.__sum_budgeted_values()
