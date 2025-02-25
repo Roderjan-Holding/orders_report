@@ -1,6 +1,6 @@
 GET_ALL_FINISHED_ORDERS = """
 SELECT 
-	content 
+	id, name, content  
 FROM glpi_tickets 
 	WHERE name LIKE '%Solicitação de Compras -%'
 	AND status = 5;
@@ -8,7 +8,7 @@ FROM glpi_tickets
 
 GET_ALL_FINISHED_MAINTENCE_ORDERS = """
 SELECT 
-	content 
+	id, name, content  
 FROM glpi_tickets 
 	WHERE name LIKE '%Solicitação de Compras de Manutenção -%'
 	AND status = 5;
